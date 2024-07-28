@@ -1,6 +1,5 @@
 package study.datajpa.repository;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,7 +19,7 @@ class MemberJpaRepositoryTest {
 
     @Test
     public void testMember() throws Exception {
-        Member member = new Member("memberA");
+        Member member = new Member("memberA", 10, null);
         Member savedMember = memberJpaRepository.save(member);
 
         Member findMember = memberJpaRepository.find(savedMember.getId());

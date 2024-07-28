@@ -8,8 +8,6 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 import study.datajpa.entity.Member;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
 @Transactional
 @Rollback(false)
@@ -19,7 +17,7 @@ class MemberRepositoryTest {
 
     @Test
     public void testMember() throws Exception {
-        Member member = new Member("memberA");
+        Member member = new Member("memberA", 10, null);
         Member savedMember = memberRepository.save(member);
 
         Member findMember = memberRepository.findById(savedMember.getId()).get();
